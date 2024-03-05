@@ -96,13 +96,12 @@ fast api에서는 이를 CORSMiddleware를 이용해서 해결한다.
 #### main.py 출처의 목록 명시 
 ```python
 origins = [
-    # "http://localhost",
-    # "http://localhost:3000",
-    # "https://dq-hustlecoding.github.io/dqflex",
-    # "https://dq-hustlecoding.github.io",
-    # "http://api.dqflex.kro.kr:8080",
-    # "http://api.dqflex.kro.kr",
-    "*",
+    "http://localhost",
+    "http://localhost:3000",
+    "https://chihyeonwon.github.io/oneflix",
+    "https://chihyeonwon.github.io",
+    "http://oneflix.link:8080",
+    "http://oneflix.link",
 ]
 ```
 #### main.py 미들웨어를 추가
@@ -127,4 +126,8 @@ middleware = [
 
 middleware 추가 : fastapi의 공식 튜토리얼에서 제공하는 코드를 그대로 사용한다.
 명시된 origins 목록은 허용된 origins로 사용하고, method나 header는 전부 허용하겠다는 의미다. 
+
+자동으로 배포되는 파이프라인은 구축해두었기 때문에 deploy 브랜치에 푸시하면 바로 서버에 최신 코드로 배포가 될 것이다.
+
+리액트로 클라이언트를 개발하여 oneflix를 완성한다.
 ```
