@@ -33,7 +33,7 @@ AWS에서 도메인을 등록하는 데 2시간에서 최대 3일까지 걸릴 �
 도메인 등록에 성공하면 등록이 완료되었다는 이메일을 확인할 수 있고 호스팅 영역 대시보드에서 등록한 도메인을 확인할 수 있다. 
 ```
 ## ACM을 이용해서 SSL certificate 발급
-[ACM Amazon Certification Manager](https://aws.amazon.com/acm/home)
+[ACM Amazon Certification Manager](https://console.aws.amazon.com/acm/home)
 ```
 HTTPS 보안 연결을 사용하기 위해 SSL Certification을 발급 받는다.
 
