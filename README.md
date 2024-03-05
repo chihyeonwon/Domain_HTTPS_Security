@@ -27,3 +27,7 @@ Disabled 를 사용하여 하반기 프로젝트 배포용으로 사용했다.
 
 AWS에서 도메인을 등록하는 데 2시간에서 최대 3일까지 걸릴 수 있다.(현재 진행중 상태)
 ```
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/5019c5c0-d283-43b9-b69f-178fed46334f)
+```
+도메인 등록에 성공하면 호스팅 영역 대시보드에서 등록한 도메인을 확인할 수 있다. 
+```
