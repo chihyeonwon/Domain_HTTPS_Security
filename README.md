@@ -82,7 +82,49 @@ Value 값 부분은 EC2 인스턴스의 퍼블릭 IPv4 주소를 적는다.
 ```
 oneflix.link에 대한 레코드가 생성되었다고 한다.
 ```
+## fast api middleware 세팅 후 재배포
+```
+cors에서 origin이란 출처를 뜻하고 이는 프로토콜, 도메인, 포트번호의 조합을 뜻한다.
+프론트엔드와 백엔드가 같은 출처가 아닐 경우 보안 상의 문제가 있을 수 있다고 판단한다.
+따라서 요청을 보내는 프론트엔드의 출처가 믿을 수 있는 출처임을 명시해주는 과정이 필요하다.
+fast api에서는 이를 CORSMiddleware를 이용해서 해결한다.
 
+1. 출처의 목록을 명시해주어야 한다.
+2. 미들웨어를 추가하는 코드를 만들어야 한다.
+```
 
+#### main.py 출처의 목록 명시 
+```python
+origins = [
+    # "http://localhost",
+    # "http://localhost:3000",
+    # "https://dq-hustlecoding.github.io/dqflex",
+    # "https://dq-hustlecoding.github.io",
+    # "http://api.dqflex.kro.kr:8080",
+    # "http://api.dqflex.kro.kr",
+    "*",
+]
+```
+#### main.py 미들웨어를 추가
+```python
+from fastapi.middleware.cors import CORSMiddleware
 
+middleware = [
+    Middleware(
+        CORSMiddleware,
+        allow_origins=origins,
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+]
+```
+```
+기존 main.py 코드에 출처의 목록을 명시하는 코드와 미들웨어를 추가하는 코드를 추가해준다.
 
+출처의 목록 명시 : 개발 환경에서 사용하는 localhost, 프론트엔드 배포 시에 자동으로 생성되는 GitHub Pages 주소 2개
+(https://chihyeonwon.github.io/oneflix, https://chihyeonwon.github.io)와 https://oneflix.link 를 추가했다.
+
+middleware 추가 : fastapi의 공식 튜토리얼에서 제공하는 코드를 그대로 사용한다.
+명시된 origins 목록은 허용된 origins로 사용하고, method나 header는 전부 허용하겠다는 의미다. 
+```
