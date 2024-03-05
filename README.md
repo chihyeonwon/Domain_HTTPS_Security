@@ -132,3 +132,7 @@ middleware 추가 : fastapi의 공식 튜토리얼에서 제공하는 코드를 
 리액트로 클라이언트를 개발하여 oneflix를 완성한다.
 ```
 ![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/b49ab3a6-412f-4b54-9223-81ab24e3d459)
+
+## 호스팅 이름 추가
+
+## 8080 포트 없애기
