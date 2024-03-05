@@ -27,7 +27,24 @@ Disabled 를 사용하여 하반기 프로젝트 배포용으로 사용했다.
 
 AWS에서 도메인을 등록하는 데 2시간에서 최대 3일까지 걸릴 수 있다.(현재 진행중 상태)
 ```
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/03f7a69d-0536-4967-9190-51087a1d30d8)
 ![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/5019c5c0-d283-43b9-b69f-178fed46334f)
 ```
-도메인 등록에 성공하면 호스팅 영역 대시보드에서 등록한 도메인을 확인할 수 있다. 
+도메인 등록에 성공하면 등록이 완료되었다는 이메일을 확인할 수 있고 호스팅 영역 대시보드에서 등록한 도메인을 확인할 수 있다. 
 ```
+## ACM을 이용해서 SSL certificate 발급
+[ACM Amazon Certification Manager](https://aws.amazon.com/acm/home)
+```
+HTTPS 보안 연결을 사용하기 위해 SSL Certification을 발급 받는다.
+
+ACM은 무료이므로 한 번만 익혀두면 HTTPS 보안 연결을 세팅할 때 유용하게 사용할 수 있다.
+```
+
+
+
+
+
+
+
+
+
