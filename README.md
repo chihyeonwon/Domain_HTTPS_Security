@@ -44,10 +44,44 @@ ACM은 무료이므로 한 번만 익혀두면 HTTPS 보안 연결을 세팅할 
 ```
 Request a public certificate 인증서 요청을 선택한다.
 ```
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/bdf5955e-0dae-4f55-9906-cbac69446807)
+```
+완전히 정규화된 도메인에는 HTTPS 보안 연결을 적용하고자 하는 도메인을 입력한다.(oneflix.link)
+validation 검증 방법을 선택하는 부분에서는 DNS 검증을 선택한다. route53과 연동해서 쉽게 도메인 연결을 진행할 수 있기 때문이다.
+```
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/47592c15-d64d-46c2-803e-de0c0c2819fa)
+```
+키 알고리즘은 RSA 2048, 태그는 아무것도 지정하지 않고 요청한다.
+```
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/d37cf473-1a62-4de2-a6b0-a79855bd7c7b)
+```
+검증 대기 중 상태의 인증서가 발급되었다. 
+```
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/6befdf6a-599b-4c1b-ba69-6ebc87b75869)
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/28af7a9f-d226-41e7-9297-a3f194e25b19)
+```
+도메인에서 Route 53에서 record가 생성되도록 한다.
+```
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/40a94feb-b8af-4e06-94fe-687401de67fa)
+```
+route 53로 가면 새로운 CName 레코드가 생성된 것을 확인할 수 있다.
+이제 생성된 CNAME 레코드와 EC2를 연결해야 한다.
+```
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/b033f33f-51aa-4f3b-bd4c-79156bfd0697)
+```
+레코드 생성 버튼을 누르면 빠른 레코드 생성창이 나온다.
 
+Record name 레코드 이름은 빈칸을 그대로 둔다.
+만약 서브도메인(예를 들어 blog.oneflix.link와 같은)을 사용하고 싶다면, Record name에 적어주면 된다.
 
+Value 값 부분은 EC2 인스턴스의 퍼블릭 IPv4 주소를 적는다.
 
-
+다른 값들은 그대로 두고 레코드 생성을 누른다.
+```
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/277478d5-2dcb-4baa-9ada-9c31e2cff7b5)
+```
+oneflix.link에 대한 레코드가 생성되었다고 한다.
+```
 
 
 
