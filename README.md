@@ -34,12 +34,16 @@ AWS에서 도메인을 등록하는 데 2시간에서 최대 3일까지 걸릴 �
 ```
 ## ACM을 이용해서 SSL certificate 발급
 [ACM Amazon Certification Manager](https://console.aws.amazon.com/acm/home)
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/fda71277-ded8-4eb5-ae68-cc1554891dd8)
 ```
 HTTPS 보안 연결을 사용하기 위해 SSL Certification을 발급 받는다.
 
 ACM은 무료이므로 한 번만 익혀두면 HTTPS 보안 연결을 세팅할 때 유용하게 사용할 수 있다.
 ```
-
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/35d9b7e4-ac13-4fed-a538-08b3c1d19be8)
+```
+Request a public certificate 인증서 요청을 선택한다.
+```
 
 
 
