@@ -133,6 +133,13 @@ middleware 추가 : fastapi의 공식 튜토리얼에서 제공하는 코드를 
 ```
 ![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/b49ab3a6-412f-4b54-9223-81ab24e3d459)
 
-## 호스팅 이름 추가
-
+## 레코드 이름 추가
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/8d0fa5c2-5068-4609-bf2c-d2e539b3b907)
+```
+레코드 이름을 추가하기 위해 CNAME과 AWS EC2를 연결한 레코드 편집으로 가서 이름에 www (world wide web) 레코드 이름을 추가했다.
+```
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/820e1a44-d797-401a-a218-d28d2ee6b8f1)
+```
+http://www.onelink.link:8080 으로 정상적으로 라우팅되어 백엔드 서버가 작동하는 것을 알 수 있다.
+```
 ## 8080 포트 없애기
