@@ -143,3 +143,42 @@ middleware 추가 : fastapi의 공식 튜토리얼에서 제공하는 코드를 
 http://www.onelink.link:8080 으로 정상적으로 라우팅되어 백엔드 서버가 작동하는 것을 알 수 있다.
 ```
 ## 8080 포트 없애기
+[8080 포트 없애기](https://extsdd.tistory.com/126)
+#### AWS EC2 인바운드 규칙 수정 
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/937d7e8e-66cd-49a4-95a2-cec45cade34b)
+```
+인바운드 규칙에서 포트번호 범위를 8080에서 80으로 변경한다. 
+```
+#### 포트 포워딩 정보 입력
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/c0e68da7-4ca0-4260-a0c6-9d432b8f1b37)
+```
+포트 포워딩이란 라우팅정보를 가지고 있는 테이블이 있는데 앞으로 80으로 들어오는 포트번호는 8080으로 해석하라고 입력하는 것이다.
+인터넷 주소치듯이 (보통 인터넷 포트가 80포트니까 80포트는 생략함) 치면 사실 80포트로 요청이 갈껀데 저 테이블 정보를 보고
+80포트는 8080으로 해석하라는 것으로 알고 8080으로 변환을 시켜주는거다. 그럼 우리 톰캣주소로 포워딩이 되는거다.
+
+1. sudo su 명령어로 root 계정으로 접속한다.
+2. iptables 명령어를 통해 80포트로 접속하는 경우 8080포트로 리다이렉트한다.
+```
+#### 도메인 최종 결과 
+[첫 도메인 배포](http://www.oneflix.link/)
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/d881b94b-42da-470e-a7c5-b35a6c681540)
+![image](https://github.com/chihyeonwon/Domain_HTTPS_Security/assets/58906858/652f60d2-af01-4404-ad75-70532e0592f3)
+```
+http://www.oneflix.link 로 도메인을 가공하는 데 성공했다.
+
+도메인이름은 rout53에서 무료로 설정 가능하고, 뒤의 호스팅 이름은 oneflix.link 일정 비율을 AWS 측에 지불하여 실제로 물리 서버를
+구축하지 않고도 회사 측에서는 값싼 가격에 호스팅 서비스를 이용할 수 있게 된다.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
